@@ -6,7 +6,7 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack --config webpack.dist.config.js",
     "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
-    "watch": "./node_modules/.bin/webpack-dev-server --content-base dist/"
+    "watch": "./node_modules/.bin/webpack-dev-server --content-base dist/ --port 8000"
   },
   "keywords": [],
   "author": "",
