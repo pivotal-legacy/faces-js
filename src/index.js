@@ -1,8 +1,5 @@
 import React from 'react'
-import {render} from 'react-dom'
+import { render } from 'react-dom'
+import LoginPage from './authentication/LoginPage'
 
-var Greeting = function(props) {
-    return (<h1>hello</h1>)
-}
-
-render(<Greeting/>, document.getElementById("app"))
+render(<LoginPage />, document.getElementById("app"))
