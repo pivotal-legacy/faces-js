@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 const LoginPage = React.createClass({
   render() {
     return (
       <div style={{margin: '20px auto', width: '900px'}}>
-        <form className="pure-form pure-form-stacked">
+        <form className="pure-form pure-form-stacked" onSubmit={this.props.onSubmit}>
           <fieldset>
             <label htmlFor="email">Email</label>
             <input id="email" type="email" placeholder="Email" />
@@ -19,5 +19,9 @@ const LoginPage = React.createClass({
     )
   }
 })
+
+LoginPage.propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
 
 export default LoginPage
