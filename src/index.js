@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
-import LoginPage from './authentication/LoginPage'
+import AppComponent from './AppComponent'
 
 render(
-  <LoginPage />, document.getElementById("app")
+  <AppComponent />, document.getElementById("app")
 )
