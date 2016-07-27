@@ -1,16 +1,22 @@
 import React, {PropTypes} from 'react'
+import SessionRepo from './SessionRepo'
 
 const LoginPage = React.createClass({
+  onSubmit(event) {
+    event.preventDefault()
+    this.props.repo.create(this.refs.email.value, this.refs.password.value)
+  },
+
   render() {
     return (
       <div style={{margin: '20px auto', width: '900px'}}>
-        <form className="pure-form pure-form-stacked" onSubmit={this.props.onSubmit}>
+        <form className="pure-form pure-form-stacked" onSubmit={this.onSubmit}>
           <fieldset>
             <label htmlFor="email">Email</label>
-            <input id="email" type="email" placeholder="Email" />
+            <input ref="email" id="email" type="email" placeholder="Email" />
 
             <label htmlFor="password">Password</label>
-            <input id="password" type="password" placeholder="Password" />
+            <input ref="password" id="password" type="password" placeholder="Password" />
 
             <button type="submit" className="pure-button pure-button-primary">Sign in</button>
           </fieldset>
@@ -21,7 +27,11 @@ const LoginPage = React.createClass({
 })
 
 LoginPage.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  repo: PropTypes.object.isRequired
+}
+
+LoginPage.defaultProps = {
+  repo: new SessionRepo()
 }
 
 export default LoginPage
