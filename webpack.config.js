@@ -1,9 +1,7 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
   entry: './src/index.js',
   output: {
-      path: __dirname + '/dist',
+      path: '../flashcards/src/main/resources/static',
       filename: 'bundle.js'
   },
   module: {
@@ -14,8 +12,5 @@ module.exports = {
           loader: 'babel'
         }
       ]
-  },
-  plugins: [new HtmlWebpackPlugin({
-    template: "src/index.html"
-  })]
+  }
 };
